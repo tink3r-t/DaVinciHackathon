@@ -15,6 +15,10 @@ public class CommunicationSystem : MonoBehaviour
     private TextMeshPro descritption;
     [SerializeField]
     private TextMeshPro simpleDescription;
+    [SerializeField]
+    private SpriteRenderer frameImage;
+
+
 
     private void Start()
     {
@@ -32,11 +36,15 @@ public class CommunicationSystem : MonoBehaviour
         this.transform.DOLocalMoveY(-6.32f, Preferences.NotificationShowSpeed);
     }
 
-    public void Notify(string headingS, string text) {
+    public void Talk(string headingS, string text, Animator character, Sprite characterFrameImage) {
         Clear();
-        Show();
         heading.text = headingS;
-        descritption.DOText(text, text.Length * Preferences.TextSpeed, false, ScrambleMode.None);
+        frameImage.sprite = characterFrameImage;
+        this.transform.DOLocalMoveY(-3.54f, Preferences.NotificationShowSpeed).OnComplete(() => {
+            character.SetBool("talking", true);
+            descritption.DOText(text, text.Length * Preferences.TextSpeed, false, ScrambleMode.None).SetEase(Ease.Linear).OnComplete( ()=> { character.SetBool("talking", false); });
+           
+        });
     }
 
     public void Notify(string text)
@@ -44,10 +52,11 @@ public class CommunicationSystem : MonoBehaviour
         Clear();
         Show();
         simpleDescription.gameObject.SetActive(true);
-        simpleDescription.DOText(text, text.Length * Preferences.TextSpeed , false, ScrambleMode.None); 
+        simpleDescription.DOText(text, text.Length * Preferences.TextSpeed, false, ScrambleMode.None).SetEase(Ease.Linear);
     }
 
     public void Clear() {
+        frameImage.sprite = null;
         heading.text = "";
         descritption.text = "";
         simpleDescription.text = "";

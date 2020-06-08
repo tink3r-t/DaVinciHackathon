@@ -10,6 +10,8 @@ enum CState {
 public class Character : MonoBehaviour
 {
 
+    public Sprite frameImage;
+
     private Animator animator;
 
     private void Start()
@@ -19,8 +21,8 @@ public class Character : MonoBehaviour
 
     private void OnMouseDown()
     {
-        animator.SetBool("talking", true);
-        CommunicationSystem.Instance.Notify("Mystic  :","Inside this door lies what you seek!");
+        //animator.SetBool("talking", true);
+        CommunicationSystem.Instance.Talk(this.name , "Hi! Inventory works fine in full screen mode. And yes I am still working :p !", animator,frameImage);
     }
 
     private void OnMouseEnter()

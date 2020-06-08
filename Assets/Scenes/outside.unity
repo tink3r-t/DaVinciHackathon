@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 360551351}
   - component: {fileID: 360551352}
   m_Layer: 0
-  m_Name: 0
+  m_Name: Actor I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frameImage: {fileID: 21300000, guid: e74663665cdd3f848b0c480f97e2d336, type: 3}
 --- !u!61 &360551352
 BoxCollider2D:
   m_ObjectHideFlags: 0
