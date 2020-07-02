@@ -24,7 +24,7 @@ public class Character : MonoBehaviour
 
     private void OnMouseDown()
     {
-        CommunicationSystem.Instance.Talk(this.name ,text , animator,frameImage);
+        CommunicationSystem.Instance.Talk(this.name ,text , animator,frameImage , ()=> { CommunicationSystem.Instance.Hide(); });
     }
 
     public void Talk(string ctext) {

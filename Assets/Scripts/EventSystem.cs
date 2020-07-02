@@ -20,6 +20,10 @@ public class EventSystem : MonoBehaviour
 
     public Scene1ObjectsAnimation s1a;
 
+    public Transform normalCurtain;
+    public GameObject normalStart;
+    public GameObject otherThings;
+    public BoxCollider2D romeo;
 
     public void HandleEvent(Action ac, char eT, string arg1 = "", string arg2= "") {
         switch (eT){
@@ -46,7 +50,12 @@ public class EventSystem : MonoBehaviour
                 EnvironmentChange(ac);
                 break;
             case 'A':
-
+                ANormalStart(ac);
+                break;
+            case 'Z':
+                CommunicationSystem.Instance.Hide();
+                InventorySystem.Instance.interactionEnabled = true;
+                romeo.enabled = true;
                 break;
             default:
                 Debug.Log("Event is not programmed yet.");
@@ -55,8 +64,13 @@ public class EventSystem : MonoBehaviour
 
     }
 
-    private void ANormalStart() {
-
+    private void ANormalStart(Action ac) {
+        CommunicationSystem.Instance.Hide();
+        normalCurtain.DOLocalMoveY(0,2).OnComplete( () => {
+            normalStart.SetActive(true);
+            otherThings.SetActive(false);
+            normalCurtain.DOLocalMoveY(11, 2).OnComplete(()=> { ac(); });
+        } );
     }
 
     public void EnvironmentChange(Action ac) {

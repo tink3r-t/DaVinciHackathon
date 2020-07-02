@@ -5,9 +5,11 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
+    string Desc = "A Simple Flower . ";
+
     private void OnMouseEnter()
     {
-        CommunicationSystem.Instance.Notify("A Simple Flower . ");
+        CommunicationSystem.Instance.Notify(Desc);
         Pointer.Instance.ChangeState(CursorState.Grab);
     }
 

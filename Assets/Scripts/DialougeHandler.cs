@@ -69,7 +69,7 @@ public class DialougeHandler : MonoBehaviour
             return;
         }
         if (tokens[0].Contains("internal")) {
-            CommunicationSystem.Instance.InternalMonolouge(tokens[languageInt + 0], tokens[languageInt + 1], () => { NextDialouge(choice); });
+            CommunicationSystem.Instance.InternalMonolouge("(internal monologue)", tokens[languageInt + 1], () => { NextDialouge(choice); });
             index++;
             return;
         }
