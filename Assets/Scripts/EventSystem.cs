@@ -11,7 +11,14 @@ public class EventSystem : MonoBehaviour
     public List<Character> persons;
     public List<Character> witches;
 
+    public SpriteRenderer BG;
+    public Sprite bg1s;
+
     public GameObject animatedBGObjects;
+
+    public List<Transform> envChangeObjs;
+
+    public Scene1ObjectsAnimation s1a;
 
 
     public void HandleEvent(Action ac, char eT, string arg1 = "", string arg2= "") {
@@ -35,6 +42,12 @@ public class EventSystem : MonoBehaviour
                 ShowAnimatedObjects();
                 ac();
                 break;
+            case 'E':
+                EnvironmentChange(ac);
+                break;
+            case 'A':
+
+                break;
             default:
                 Debug.Log("Event is not programmed yet.");
                 break;
@@ -42,9 +55,17 @@ public class EventSystem : MonoBehaviour
 
     }
 
+    private void ANormalStart() {
+
+    }
+
+    public void EnvironmentChange(Action ac) {
+        s1a.Animate(ac);
+    }
+
     public void ShowAnimatedObjects() {
         animatedBGObjects.SetActive(true);
-
+        BG.sprite = bg1s;
     }
 
     public void HideWitches(Action ac)
