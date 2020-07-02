@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -18,6 +18,10 @@ public class CommunicationSystem : MonoBehaviour
     [SerializeField]
     private SpriteRenderer frameImage;
 
+    [SerializeField]
+    private SelectionSystem selectionSystem;
+    [SerializeField]
+    private List<TextMeshPro> opts;
 
 
     private void Start()
@@ -33,26 +37,37 @@ public class CommunicationSystem : MonoBehaviour
 
     public void Hide()
     {
+        Clear();
         this.transform.DOLocalMoveY(-6.32f, Preferences.NotificationShowSpeed);
     }
 
-    public void Talk(string headingS, string text, Animator character, Sprite characterFrameImage) {
+    public void Talk(string headingS, string text, Animator character, Sprite characterFrameImage, Action callback = null) {
         Clear();
         heading.text = headingS;
         frameImage.sprite = characterFrameImage;
         this.transform.DOLocalMoveY(-3.54f, Preferences.NotificationShowSpeed).OnComplete(() => {
             character.SetBool("talking", true);
-            descritption.DOText(text, text.Length * Preferences.TextSpeed, false, ScrambleMode.None).SetEase(Ease.Linear).OnComplete( ()=> { character.SetBool("talking", false); });
+            descritption.DOText(text, text.Length * Preferences.TextSpeed, false, ScrambleMode.None).SetEase(Ease.Linear).OnComplete( ()=> { character.SetBool("talking", false); callback?.Invoke(); });
            
         });
     }
 
-    public void Notify(string text)
+    public void InternalMonolouge(string headingS, string text, Action callback = null)
+    {
+        Clear();
+        heading.text = headingS;
+        this.transform.DOLocalMoveY(-3.54f, Preferences.NotificationShowSpeed).OnComplete(() => {
+            descritption.DOText(text, text.Length * Preferences.TextSpeed, false, ScrambleMode.None).SetEase(Ease.Linear).OnComplete(() => { callback?.Invoke(); });
+        });
+    }
+
+
+    public void Notify(string text, Action callback = null)
     {
         Clear();
         Show();
         simpleDescription.gameObject.SetActive(true);
-        simpleDescription.DOText(text, text.Length * Preferences.TextSpeed, false, ScrambleMode.None).SetEase(Ease.Linear);
+        simpleDescription.DOText(text, text.Length * Preferences.TextSpeed, false, ScrambleMode.None).SetEase(Ease.Linear).OnComplete(()=> { callback?.Invoke(); } );
     }
 
     public void Clear() {
@@ -60,6 +75,15 @@ public class CommunicationSystem : MonoBehaviour
         heading.text = "";
         descritption.text = "";
         simpleDescription.text = "";
+        for (int i = 0; i < 3; i++)
+            opts[i].text = "";
+    }
+
+    public void AskUser(string opt1, string opt2, string opt3, Action<int> c)
+    {
+        Clear();
+        Show();
+        selectionSystem.showOptions(opt1,opt2,opt3,c);
     }
 
 }

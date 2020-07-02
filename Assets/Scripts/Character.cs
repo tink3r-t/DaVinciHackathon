@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +7,11 @@ enum CState {
     Talking
 };
 
+[System.Serializable]
 public class Character : MonoBehaviour
 {
+
+    public string text = "Hi!";
 
     public Sprite frameImage;
 
@@ -21,9 +24,18 @@ public class Character : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //animator.SetBool("talking", true);
-        CommunicationSystem.Instance.Talk(this.name , "Hi! Inventory works fine in full screen mode. And yes I am still working :p !", animator,frameImage);
+        CommunicationSystem.Instance.Talk(this.name ,text , animator,frameImage);
     }
+
+    public void Talk(string ctext) {
+        CommunicationSystem.Instance.Talk(this.name, ctext, animator, frameImage);
+    }
+
+    public void Talk(string ctext, Action callback )
+    {
+        CommunicationSystem.Instance.Talk(this.name, ctext, animator, frameImage , callback);
+    }
+
 
     private void OnMouseEnter()
     {
@@ -32,8 +44,6 @@ public class Character : MonoBehaviour
 
     private void OnMouseExit()
     {
-        //animator.SetBool("talking", false);
-        //CommunicationSystem.Instance.Hide();
         Pointer.Instance.ChangeState(CursorState.Idle);
     }
 

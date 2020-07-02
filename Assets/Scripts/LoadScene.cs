@@ -6,6 +6,6 @@ public class LoadScene : MonoBehaviour
 {
     void Start()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

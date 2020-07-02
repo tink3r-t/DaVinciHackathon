@@ -1,0 +1,34 @@
+Character	DE_option_1	DE_option_2	DE_option_3	EN_option_1	EN_option_2	EN_option_3	FR_option_1	FR_option_2	FR_option_3		
+you (choose)	Hallo	Hi	Guten Tag	Hi	Good Day	Hello					
+actor I	Hallo	Hi	Guten Tag	Hi	Good Day	Hello					
+actor II	Hallo	Hi	Guten Tag	Hi	Good Day	Hello					
+actor III	Hallo	Hi	Guten Tag	Hi	Good Day	Hello					
+you (choose)	Nette Tür!	Puh! Hier stinkt’s!	Sind Sie echte Schauspieler?	Nice door!	Uff! That’s smelly!	Are you real actors?					
+actor I	Ehm… ja.	(keine Reaktion)	Ohja, genau das sind wir!	Uhm.. I guess.	(no reaction)	Indeed, this is exactly what we are!					
+actor II	(keine Reaktion)	(keine Reaktion)	(keine Reaktion)	(no reaction)	(no reaction)	(no reaction)					
+actor III	(keine Reaktion)	(keine Reaktion)	(keine Reaktion)	(no reaction)	(no reaction)	(no reaction)					
+you (choose)	Ich suche das Saarländische Staatstheater, bin ich hier richtig?	Ist das hier der Hintereingang des Saarländischen Staatstheaters?	Hah! Der Hintereingang des Saarländischen Staatstheaters!	I am looking for the Saarländisches Staatstheater, is this the right address?	Is this the reer entrance of the Saarländisches Staatstheater?	Hah! The back postern of the Saarländisches Staatstheater!					
+actor I	Ja, hier ist der Hintereingang. 	Angenommen, du lägest richtig, was würdest du da wollen?	Richtig geschlussfolgert, Watson.	Right. This is the back entrance.	If it were so, what would you want from it?	Correctly deduced, Watson!					
+actor II	Spielen tun wir aber erst heute Abend	(keine Reaktion)	(keine Reaktion)	The next performance will be staged tonight.	(no reaction)	(no reaction)					
+actor III	Der Haupteingang ist da vorn.	(keine Reaktion)	(keine Reaktion)	You find the main entrance around the corner.	(no reaction)	(no reaction)					
+you (choose)	Ich habe heute meinen ersten Praktikumstag. Ich habe gar nicht so gut geschlafen, letzte Nacht.	Heute beginnt mein Praktikum hier, ich bin schon ganz aufgeregt!	Hinter dieser schönen Tür wird heute mein Praktikum beginnen.	This is my first day of internship here. I did not sleep too well, though.	Today my internship here will beginn. I am so excited!	Behind this door lies the land of.. my internship for the next couple of weeks!					
+actor I	Oh schön! Dann mal toi, toi, toi!	Oh schön! Dann mal toi, toi, toi!	Oh schön! Dann mal toi, toi, toi!	Oh, great! Toi, toi, toi!	Oh, great! Toi, toi, toi!	Oh, great! Toi, toi, toi!					
+actor II	Ja! Viel Spaß und toi, toi, toi!	Ja! Viel Spaß und toi, toi, toi!	Ja! Viel Spaß und toi, toi, toi!	Enjoy your time here! Toi, toi, toi!	Enjoy your time here! Toi, toi, toi!	Enjoy your time here! Toi, toi, toi!					
+actor III	Toi, toi, toi!	Toi, toi, toi!	Toi, toi, toi!	This will be unforgettable, toi, toi, toi!	This will be unforgettable, toi, toi, toi!	This will be unforgettable, toi, toi, toi!					
+you (choose)	Hehe, danke.	Besten Dank!	Danke.	Thanks, hehe!	How nice of you, thanks!	Thank you.					
+actor I	............	............	............	............	............	............					
+actor II	............	............	............	............	............	............					
+actor III	............	............	............	............	............	............					
+witch I	Ich komme, Graupelz			I come,  'graymalkin!							
+witch II	Kröte ruft; – sogleich!			Paddock calls.							
+witch III	 Schön ist wüst, und wüst ist schön. 'Wirbelt durch Nebel und Wolkenhöhn!			Fair is foul, and foul is fair: 'Hover through the fog and filthy air.					???	Unheilsschwestern, Hand in Hand Schwärmend über Meer und Land, Ziehen so rundum, rundum. Dreimal dein und dreimal mein, Und dreimal noch, so macht es neun! Still! – Der Zauber ist geknüpft.	
+VIDEO	(Sky above theatre darkens, McBeth appears)	...böser Bösewicht Monolog....		....Bad Bad Guy Monologue...							
+you (internal monologue)	Ob die am Theater wohl alle so komisch sind?			I wonder whether all of of those theatre people are so weird.							
+											
+											
+											
+											
+											
+											
+											
+											
