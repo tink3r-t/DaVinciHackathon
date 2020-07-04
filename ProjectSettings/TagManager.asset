@@ -47,8 +47,17 @@ TagManager:
   - name: BG
     uniqueID: 2617251219
     locked: 0
+  - name: Environment
+    uniqueID: 3070372673
+    locked: 0
+  - name: Fog
+    uniqueID: 3218590091
+    locked: 0
   - name: Characters
     uniqueID: 190193335
+    locked: 0
+  - name: ParticleEffects
+    uniqueID: 339260273
     locked: 0
   - name: UI
     uniqueID: 3029305859

@@ -235,8 +235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls: []
   text: Hi! Inventory works fine in full screen mode. And yes I am still working
     :p !
+  textDE: Hi!
   frameImage: {fileID: 21300000, guid: 73b921011577b9147b092213de017641, type: 3}
 --- !u!1 &173780923
 GameObject:
@@ -830,7 +834,6 @@ Transform:
   - {fileID: 1613785489}
   - {fileID: 887147731}
   - {fileID: 515692101}
-  - {fileID: 2136007967}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -950,7 +953,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls: []
   text: ' Yes I am still working on project :p !'
+  textDE: Hi!
   frameImage: {fileID: 21300000, guid: e74663665cdd3f848b0c480f97e2d336, type: 3}
 --- !u!61 &360551352
 BoxCollider2D:
@@ -1116,7 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 656339469}
-  sceneToLoad: 2
+  sceneToLoad: 3
 --- !u!4 &459923520
 Transform:
   m_ObjectHideFlags: 0
@@ -2551,6 +2558,7 @@ GameObject:
   - component: {fileID: 887147729}
   - component: {fileID: 887147732}
   - component: {fileID: 887147733}
+  - component: {fileID: 887147734}
   m_Layer: 0
   m_Name: Romeo
   m_TagString: Untagged
@@ -2637,7 +2645,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
-  m_Children: []
+  m_Children:
+  - {fileID: 2136007967}
   m_Father: {fileID: 330813512}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2653,7 +2662,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 887147732}
+        m_MethodName: Talk
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Danke dir! Du kannst jetzt gehen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 887147734}
+        m_MethodName: DOPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   text: 'Give me one rose!       '
+  textDE: Ich brauche eine Rose.
   frameImage: {fileID: 21300000, guid: 6735f541833d5d9439b4b569bf26a3fe, type: 3}
 --- !u!61 &887147733
 BoxCollider2D:
@@ -2681,6 +2716,122 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.328078, y: 8.507074}
   m_EdgeRadius: 0
+--- !u!114 &887147734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887147728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateType: 0
+  isSpeedBased: 0
+  hasOnStart: 0
+  hasOnPlay: 0
+  hasOnUpdate: 0
+  hasOnStepComplete: 0
+  hasOnComplete: 1
+  hasOnTweenCreated: 0
+  hasOnRewind: 0
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onStepComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 459923517}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onTweenCreated:
+    m_PersistentCalls:
+      m_Calls: []
+  onRewind:
+    m_PersistentCalls:
+      m_Calls: []
+  targetIsSelf: 1
+  targetGO: {fileID: 0}
+  tweenTargetIsTargetGO: 1
+  delay: 0
+  duration: 2
+  easeType: 6
+  easeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  loopType: 0
+  loops: 1
+  id: 
+  isRelative: 0
+  isFrom: 0
+  isIndependentUpdate: 0
+  autoKill: 1
+  isActive: 1
+  isValid: 1
+  target: {fileID: 887147731}
+  animationType: 2
+  targetType: 11
+  forcedTargetType: 0
+  autoPlay: 0
+  useTargetAsV3: 0
+  endValueFloat: 0
+  endValueV3: {x: -15, y: 0, z: 0}
+  endValueV2: {x: 0, y: 0}
+  endValueColor: {r: 1, g: 1, b: 1, a: 1}
+  endValueString: 
+  endValueRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  endValueTransform: {fileID: 0}
+  optionalBool0: 0
+  optionalFloat0: 0
+  optionalInt0: 0
+  optionalRotationMode: 0
+  optionalScrambleMode: 0
+  optionalString: 
 --- !u!1 &910445294
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,7 +3224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls: []
   text: Hahaha
+  textDE: Hi!
   frameImage: {fileID: 21300000, guid: 92c99706e41f3ca4fbf2d99d15d04a6c, type: 3}
 --- !u!1 &1010601603
 GameObject:
@@ -3657,7 +3812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls: []
   text: Hi! Inventory works fine in full screen mode!
+  textDE: Hi!
   frameImage: {fileID: 21300000, guid: e74663665cdd3f848b0c480f97e2d336, type: 3}
 --- !u!95 &1217004818
 Animator:
@@ -4278,7 +4437,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls: []
   text: Hi! Inventory works fine in full screen mode!
+  textDE: Hi!
   frameImage: {fileID: 21300000, guid: e74663665cdd3f848b0c480f97e2d336, type: 3}
 --- !u!95 &1336481670
 Animator:
@@ -4745,7 +4908,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls: []
   text: Everything is soon going to be crazy.
+  textDE: Hi!
   frameImage: {fileID: 21300000, guid: e74663665cdd3f848b0c480f97e2d336, type: 3}
 --- !u!95 &1450628650
 Animator:
@@ -5068,7 +5235,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls: []
   text: -_-
+  textDE: Hi!
   frameImage: {fileID: 21300000, guid: 9ddd870b3d14a3d489b3405ad4ff5fb0, type: 3}
 --- !u!1 &1613785488
 GameObject:
@@ -5427,8 +5598,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbcaccb34d7af45acdd75149fb88c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ccItem:
+    m_PersistentCalls:
+      m_Calls: []
   text: Hi! Inventory works fine in full screen mode. And yes I am still working
     :p !
+  textDE: Hi!
   frameImage: {fileID: 21300000, guid: 69385b654d0e22b40b6bde4dbae5706a, type: 3}
 --- !u!1 &1893995053
 GameObject:
@@ -5920,11 +6095,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136007965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.59, y: -3.9245143, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.8777778, y: -4.360572, z: 0}
+  m_LocalScale: {x: 1.1111112, y: 1.1111112, z: 1.1111112}
   m_Children: []
-  m_Father: {fileID: 330813512}
-  m_RootOrder: 3
+  m_Father: {fileID: 887147731}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6380270118303923123
 PrefabInstance:
